@@ -27,6 +27,7 @@ services:
             KAFKA_CREATE_TOPICS: viidPerson:1:1,viidFace:1:1,viidMotorVehicle:1:1
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
+            - kafka-data:/kafka
         ulimits:
             nproc: 65535
             nofile:
@@ -48,3 +49,6 @@ services:
         ports:
            - "8083:8083"
 
+volumes:
+    kafka-data:
+        external: false
