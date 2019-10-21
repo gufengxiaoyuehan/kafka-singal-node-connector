@@ -25,6 +25,7 @@ services:
             KAFKA_LISTENERS: OUTSIDE://0.0.0.0:9092,INSIDE://:19092
             KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
             KAFKA_CREATE_TOPICS: viidPerson:1:1,viidFace:1:1,viidMotorVehicle:1:1
+            KAFKA_LOG_RETENTION_BYTES: 1073741824
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
             - kafka-data:/kafka
